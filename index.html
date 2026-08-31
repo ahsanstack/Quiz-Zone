@@ -43,6 +43,83 @@
       class="flex-1 max-w-4xl w-full mx-auto p-4 sm:p-6 flex flex-col justify-center"
     >
       <div id="app"></div>
+
+      <section id="welcome-screen" class="space-y-8 py-4">
+        <div class="text-center space-y-3">
+          <span
+            class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 rounded-full"
+          >
+            Quick 5-Question Challenge
+          </span>
+          <h1
+            class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight"
+          >
+            Welcome to QuizZone
+          </h1>
+          <p class="text-slate-400 max-w-md mx-auto text-sm sm:text-base">
+            Choose a category and difficulty level to take a fast 5-question
+            test.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="bg-slate-800/40 border border-slate-800 rounded-2xl p-5 backdrop-blur-sm space-y-4"
+          >
+            <h2
+              class="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2"
+            >
+              <i class="fa-solid fa-folder-open text-indigo-400"></i> Select
+              Category
+            </h2>
+            <div id="category-options" class="grid gap-3"></div>
+          </div>
+
+          <div
+            class="bg-slate-800/40 border border-slate-800 rounded-2xl p-5 backdrop-blur-sm space-y-4 flex flex-col justify-between"
+          >
+            <div>
+              <h2
+                class="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2 mb-4"
+              >
+                <i class="fa-solid fa-layer-group text-indigo-400"></i>
+                Difficulty Level
+              </h2>
+              <div id="difficulty-options" class="grid grid-cols-3 gap-3"></div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-slate-800/80">
+              <h3
+                class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3"
+              >
+                Highest Score
+              </h3>
+              <div
+                class="flex items-center justify-between bg-slate-900/60 p-3.5 rounded-xl border border-slate-800"
+              >
+                <span class="text-sm text-slate-400" id="best-score-label"
+                  >Web Development (Easy)</span
+                >
+                <span
+                  class="text-lg font-bold text-amber-400"
+                  id="best-score-val"
+                  >0 / 0</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          id="start-btn"
+          class="w-full py-4 rounded-xl font-bold text-lg text-white bg-indigo-600 hover:bg-indigo-500 active:scale-[0.99] transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 group"
+        >
+          <span>Start Quiz</span>
+          <i
+            class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"
+          ></i>
+        </button>
+      </section>
     </main>
 
     <!-- Footer -->
