@@ -120,6 +120,118 @@
           ></i>
         </button>
       </section>
+      <!-- 2. QUIZ INTERFACE SCREEN -->
+      <section id="quiz-screen" class="hidden space-y-6 py-4">
+        <div
+          class="bg-slate-800/40 border border-slate-800 rounded-2xl p-4 flex items-center justify-between flex-wrap gap-4 backdrop-blur-sm"
+        >
+          <div class="flex items-center gap-3">
+            <span
+              id="quiz-category-badge"
+              class="px-3 py-1 rounded-lg text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
+              >Category</span
+            >
+            <span
+              id="quiz-difficulty-badge"
+              class="px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase"
+              >Easy</span
+            >
+          </div>
+
+          <div class="flex items-center gap-6">
+            <div class="text-sm font-semibold text-slate-400">
+              Score:
+              <span
+                id="current-score"
+                class="text-indigo-400 font-bold text-base"
+                >0</span
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="relative w-10 h-10 flex items-center justify-center">
+                <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                  <path
+                    class="text-slate-700"
+                    stroke-width="3"
+                    stroke="currentColor"
+                    fill="none"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <path
+                    id="timer-progress"
+                    class="text-indigo-500 transition-all duration-1000"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                    stroke-dasharray="100, 100"
+                    stroke="currentColor"
+                    fill="none"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                </svg>
+                <span
+                  id="timer-text"
+                  class="absolute text-xs font-bold text-white"
+                  >15</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div
+            class="flex justify-between text-xs font-semibold text-slate-400"
+          >
+            <span
+              >Question <span id="q-current">1</span> of
+              <span id="q-total">5</span></span
+            >
+            <span id="progress-percent">20%</span>
+          </div>
+          <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
+            <div
+              id="progress-bar"
+              class="bg-indigo-500 h-2.5 rounded-full transition-all duration-300 w-0"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          class="bg-slate-800/60 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-6 shadow-xl"
+        >
+          <h2
+            id="question-text"
+            class="text-xl sm:text-2xl font-bold text-white leading-relaxed"
+          >
+            Question title loading...
+          </h2>
+          <div id="options-container" class="grid gap-3"></div>
+          <div
+            id="explanation-box"
+            class="hidden p-4 rounded-xl bg-slate-900/80 border border-slate-700 text-sm text-slate-300 space-y-1"
+          >
+            <span class="font-bold text-indigo-400 flex items-center gap-2"
+              ><i class="fa-solid fa-circle-info"></i> Explanation:</span
+            >
+            <p id="explanation-text"></p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-2">
+          <button
+            id="prev-btn"
+            class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-800/50 hover:bg-slate-700 text-slate-300 disabled:opacity-30 disabled:pointer-events-none transition-all flex items-center gap-2"
+          >
+            <i class="fa-solid fa-chevron-left text-xs"></i> Previous
+          </button>
+          <button
+            id="next-btn"
+            class="px-6 py-2.5 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:pointer-events-none transition-all shadow-md shadow-indigo-600/20 flex items-center gap-2"
+          >
+            <span>Next</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
