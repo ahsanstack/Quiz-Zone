@@ -14,6 +14,8 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   </head>
   <body
     class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white"
@@ -120,7 +122,7 @@
           ></i>
         </button>
       </section>
-      <!-- 2. QUIZ INTERFACE SCREEN -->
+
       <section id="quiz-screen" class="hidden space-y-6 py-4">
         <div
           class="bg-slate-800/40 border border-slate-800 rounded-2xl p-4 flex items-center justify-between flex-wrap gap-4 backdrop-blur-sm"
@@ -232,11 +234,118 @@
           </button>
         </div>
       </section>
+
+      <!-- 3. RESULTS & REVIEW SCREEN -->
+      <section id="results-screen" class="hidden space-y-8 py-4">
+        <div
+          class="bg-slate-800/40 border border-slate-800 rounded-3xl p-6 sm:p-10 text-center backdrop-blur-sm space-y-6 shadow-2xl"
+        >
+          <div
+            class="inline-flex p-4 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-4xl mb-2"
+          >
+            <i id="result-icon" class="fa-solid fa-trophy"></i>
+          </div>
+
+          <div class="space-y-2">
+            <h1
+              id="result-title"
+              class="text-3xl sm:text-4xl font-extrabold text-white"
+            >
+              Quiz Completed!
+            </h1>
+            <p id="result-subtitle" class="text-slate-400">
+              Great job completing the quiz!
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-4">
+            <div
+              class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80"
+            >
+              <span class="text-xs text-slate-500 font-semibold uppercase"
+                >Score</span
+              >
+              <p
+                id="final-score"
+                class="text-2xl font-black text-indigo-400 mt-1"
+              >
+                0/0
+              </p>
+            </div>
+            <div
+              class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80"
+            >
+              <span class="text-xs text-slate-500 font-semibold uppercase"
+                >Accuracy</span
+              >
+              <p
+                id="accuracy-percent"
+                class="text-2xl font-black text-emerald-400 mt-1"
+              >
+                0%
+              </p>
+            </div>
+            <div
+              class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80"
+            >
+              <span class="text-xs text-slate-500 font-semibold uppercase"
+                >Correct</span
+              >
+              <p
+                id="correct-count"
+                class="text-2xl font-black text-emerald-400 mt-1"
+              >
+                0
+              </p>
+            </div>
+            <div
+              class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80"
+            >
+              <span class="text-xs text-slate-500 font-semibold uppercase"
+                >Wrong</span
+              >
+              <p
+                id="wrong-count"
+                class="text-2xl font-black text-rose-400 mt-1"
+              >
+                0
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2"
+          >
+            <button
+              id="restart-btn"
+              class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-white bg-indigo-600 hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2"
+            >
+              <i class="fa-solid fa-rotate-right"></i> Try Again
+            </button>
+            <button
+              id="review-btn"
+              class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold border border-slate-700 bg-slate-800 hover:bg-slate-700 transition-all text-slate-200 flex items-center justify-center gap-2"
+            >
+              <i class="fa-solid fa-list-check"></i> Review Answers
+            </button>
+          </div>
+        </div>
+
+        <div id="review-container" class="hidden space-y-4">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-magnifying-glass text-indigo-400"></i> Answer
+            Breakdown
+          </h3>
+          <div id="review-list" class="space-y-4"></div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer
       class="border-t border-slate-800/60 py-4 text-center text-xs text-slate-500"
     ></footer>
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
